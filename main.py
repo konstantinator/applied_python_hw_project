@@ -52,6 +52,7 @@ async def train_model_default():
     r.set("model", pickle.dumps(model))
     return {"message": "Model trained on default data and saved successfully"}
 
+
 @app.post("/predict")
 async def predict(request: PredictRequest):
     data = request.data

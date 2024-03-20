@@ -5,11 +5,10 @@
 запускаем командой 
 
 
-docker-compose up --build 
+`docker-compose up --build`
 
-остановить можно ctrl+c
+остановить можно `ctrl+c`
 
 далее обязательно выполнить команду 
 
-docker-compose down
-
+`docker-compose down`
