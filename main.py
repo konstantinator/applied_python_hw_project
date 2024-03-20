@@ -8,11 +8,22 @@ import pickle
 import redis
 import hashlib
 
-# Инициализация FastAPI и Redis
+# Инициализация FastAPI
 app = FastAPI()
 
-redis_url = os.getenv("REDIS_URL", "redis://localhost:6379")
-r = redis.Redis(redis_url, db=0)
+redis_url = 'rediss://red-cnte8nvsc6pc73cb03gg:peBJvfhrCZPT24NIqTUThCwEKBbIIoQP@frankfurt-redis.render.com:6379'
+r = redis.Redis.from_url(redis_url, ssl_cert_reqs=None)
+
+# Проверяем соединение, отправляя команду PING
+try:
+    response = r.ping()
+    if response:
+        print("Соединение с Redis успешно установлено через SSL.")
+    else:
+        print("Получен неожиданный ответ от Redis.")
+except (redis.ConnectionError, redis.TimeoutError) as e:
+    print(f"Ошибка подключения к Redis: {e}")
+
 
 # Модели Pydantic для запросов
 class TrainRequest(BaseModel):
