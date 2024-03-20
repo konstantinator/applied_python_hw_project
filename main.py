@@ -111,23 +111,3 @@ async def predict_multiple(request: PredictRequest):
         else:
             raise HTTPException(status_code=404, detail="Model not found")
     return {"predictions": results,  'cashed': cashe}
-
-
-
-# @app.post("/predict/multiple")
-# async def predict_multiple(request: PredictRequest):
-    
-#     data = request.data
-#     cache_key = generate_cache_key(data)
-    
-#     if r.exists(cache_key):
-#         result = pickle.loads(r.get(cache_key))
-#         return {"predictions": result, 'cashed': True}
-
-#     if r.exists("model"):
-#         model = pickle.loads(r.get("model"))
-#         predictions = model.predict(data).tolist()
-#         r.set(cache_key, pickle.dumps(predictions))
-#         return {"predictions": predictions,  'cashed': False}
-#     else:
-#         raise HTTPException(status_code=404, detail="Model not found")
