@@ -3,13 +3,16 @@ from pydantic import BaseModel, Field
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
+import os
 import pickle
 import redis
 import hashlib
 
 # Инициализация FastAPI и Redis
 app = FastAPI()
-r = redis.Redis(host='redis', port=6379, db=0)
+
+redis_url = os.getenv("REDIS_URL", "redis://localhost:6379")
+r = redis.Redis(redis_url, db=0)
 
 # Модели Pydantic для запросов
 class TrainRequest(BaseModel):
