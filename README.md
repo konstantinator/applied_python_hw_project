@@ -10,7 +10,8 @@ docker-compose up --build
 ```bash
 docker-compose down
 ```
-Сейчас сервер развернут на платформе [Render](URL "https://dashboard.render.com")
+Сейчас сервер развернут на платформе [Render](https://dashboard.render.com/)
+
 ![img.png](img.png)
 ### Проверка работы сервера
 Во время развертывания сервера проверяется соединения с `Redis` сервером, если все хорошо, то в логах Вы увидите `Соединение с Redis успешно установлено через SSL.`
