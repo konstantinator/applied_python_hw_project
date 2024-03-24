@@ -17,4 +17,4 @@ docker-compose down
 
 Для проверки функционала, запустите `service.ipynb`, он обратится к серверу и запустит тест по всему функционалу
 
-Сервер откликается по ссылке `https://applied-python-hw-project.onrender.com`
+Сервер откликается по ссылке `[https://applied-python-hw-project.onrender.com](https://applied-python-hw-project.onrender.com/docs)https://applied-python-hw-project.onrender.com/docs`
